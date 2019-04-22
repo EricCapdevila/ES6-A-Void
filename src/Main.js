@@ -8,7 +8,15 @@ function build(elementAdd){
 
 
 function buildIntroScreen(){
-  const introScreen =  build( '<section id = "Intro" ><h1 id = "title">A-Void</h1> <p><span>Your star has left you because she apparently needs more Space. Travel to find a new one!</span></p><div id = "buttonsIntro"><button id = "startButton"><span>START JOURNEY<span> </button><button id = "instructions"><span>INSTRUCTIONS</span></button><div></section>');
+  const introScreen =  build( 
+    `<section id = "Intro" >
+    <h1 id = "title">A-Void</h1> 
+    <p><span>Your star has left you because she apparently needs more Space. Travel to find a new one!</span></p>
+    <div id = "buttonsIntro">
+      <button id = "startButton"><span>START JOURNEY<span> </button>
+      <button id = "instructions"><span>INSTRUCTIONS</span></button>
+    </div>
+  </section>`);
   const StartButton = document.getElementById("startButton");
   StartButton.addEventListener("click", buildGameScreen);
   const instructionsButton = document.getElementById("instructions");
@@ -27,7 +35,22 @@ function buildIntroScreen(){
 }
 
 function buildInstructionsScreen(){
- const instructionScreen = build('<section id = "instructions"><div><button id = "back"><span>BACK</span></button></div><div><p>Move in all directions</p> <img src = "./material/arrows.png" width= "80px" height = "80px"><p> Collect stars to regain health</p><img src = "./material/star.png" width = "80px" height = "80px"><p>Survive one minute to win<p></div><div><button id = "go"><span>GO</span></button><div></section>')
+ const instructionScreen = build(
+   `<section id = "instructions">
+      <div>
+        <button id = "back"><span>BACK</span></button>
+      </div>
+      <div>
+        <p>Move in all directions</p>
+        <img src = "./material/arrows.png" width= "80px" height = "80px">
+        <p> Collect stars to regain health</p>
+        <img src = "./material/star.png" width = "80px" height = "80px">
+        <p>Survive one minute to win<p>
+      </div>
+      <div>
+        <button id = "go"><span>GO</span></button>
+      <div>
+    </section>`)
  const goButton = document.getElementById("go");
  goButton.addEventListener("click", buildGameScreen);
  const goBack = document.getElementById("back");
@@ -36,7 +59,7 @@ function buildInstructionsScreen(){
 
 function buildGameScreen(){
  
-  const  gameScreen = build('<canvas id="canvas" width="1100" height="800" ></canvas>')
+  const  gameScreen = build(`<canvas id="canvas" width="1100" height="800" ></canvas>`)
   const canvas = document.getElementById("canvas");
    
    let game = new Game(canvas);
@@ -73,7 +96,12 @@ function buildDeathScreen(game){
   
   playLose();
   const deathScreen =  build(
-    '<section id = "Death" ><h1>YOU LOST</h1> <p></p><div><button id = "retryButton"><span>RETRY<span> </button><div></section>');
+    `<section id = "Death">
+      <h1>YOU LOST</h1>
+      <div>
+       <button id = "retryButton"><span>RETRY<span> </button>
+      <div>
+    </section>`);
     const retryButton = document.getElementById("retryButton");
   retryButton.addEventListener("click", buildGameScreen);
   
@@ -82,7 +110,14 @@ function buildDeathScreen(game){
 function buildWinScreen(game){
   
   playWin();
-  const  winScreen = build('<section id = "win"><h1>YOU SURVIVED!</h1> <p><span>You have found a new star! Shinier and bigger than the old one</span></p><div><button id = "main-menu"><span>MENU<span> </button><div></section>');
+  const  winScreen = build(`
+  <section id = "win">
+    <h1>YOU SURVIVED!</h1>
+    <p><span>You have found a new star! Shinier and bigger than the old one</span></p>
+    <div>
+      <button id = "main-menu"><span>MENU<span> </button>
+    </div>
+  </section`);
   const mainMenuButton = document.getElementById("main-menu");
  mainMenuButton.addEventListener("click", buildIntroScreen);
 }

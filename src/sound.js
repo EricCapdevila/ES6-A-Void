@@ -5,35 +5,35 @@ function sound(src) {
   this.sound.setAttribute("controls", "none");
   this.sound.style.display = "none";
   document.body.appendChild(this.sound);
-  this.play = function(){
+  this.play = ()=>{
     this.sound.play();
   }
-  this.stop = function(){
+  this.stop = ()=>{
     this.sound.pause();
   }
 }
 
-function playLose(){
+playLose=()=>{
   let lose = new sound("./material/lose.mp3");
   lose.play();
 }
 
-function playImpact(){
+playImpact=()=>{
   let impact= new sound("./material/impact.mp3");
   impact.play();
 }
 
-function playStar(){
+playStar=()=>{
   let star = new sound("./material/star.mp3");
   star.play();
 }
 
-function playWin(){
+playWin=()=>{
   let win= new sound("./material/win.mp3");
   win.play();
 }
 
-function playSong(){
+playSong=()=>{
   let song = new sound("./material/song.mp3");
   song.play();
 }
